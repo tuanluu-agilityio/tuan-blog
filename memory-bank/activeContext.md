@@ -4,11 +4,11 @@
 
 ## Where we are
 
-Phase 1 (MVP blog live on GitHub Pages) in progress: `docs/plans/phase-1-mvp.md`. Task 001 done: Astro 7 scaffold, real gate (lint, test, build).
+Phase 1 (MVP blog live on GitHub Pages) in progress: `docs/plans/phase-1-mvp.md`. Tasks 001-002 done: Astro 7 scaffold, gate (lint, test, build, links), CI job `check`, Pages deploy workflow, base `/tuan-blog`.
 
 ## Next
 
-Task 002 - CI check, Pages deploy and base-path link check (`docs/tasks/002-ci-deploy-links.md`).
+Task 003 - i18n routing, content schema and post helpers (`docs/tasks/003-i18n-content.md`).
 
 ## Waiting on owner
 
