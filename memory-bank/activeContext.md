@@ -4,11 +4,11 @@
 
 ## Where we are
 
-Phase 1 (MVP blog live on GitHub Pages) in progress: `docs/plans/phase-1-mvp.md`. Tasks 001-006 done (home/post/About/404 pages in vi and en, 3 sample posts; base layout, header, footer, language switcher; warm design tokens, self-hosted fonts, theme toggle; i18n vi/en, content schema, post helpers): Astro 7 scaffold, gate (lint, test, build, links), CI job `check`, Pages deploy workflow, base `/tuan-blog`.
+Phase 1 (MVP blog live on GitHub Pages) in progress: `docs/plans/phase-1-mvp.md`. Tasks 001-007 done (live-site verification: all PASS, Lighthouse 100/100; home/post/About/404 pages in vi and en, 3 sample posts; base layout, header, footer, language switcher; warm design tokens, self-hosted fonts, theme toggle; i18n vi/en, content schema, post helpers): Astro 7 scaffold, gate (lint, test, build, links), CI job `check`, Pages deploy workflow, base `/tuan-blog`.
 
 ## Next
 
-Task 007 - Phase verification on the live site (`docs/tasks/007-phase-verification.md`).
+Task 008 - Post meta spacing and favicon (`docs/tasks/008-polish-meta-favicon.md`).
 
 ## Waiting on owner
 

@@ -1,0 +1,20 @@
+Date: 2026-11-22T21:48:22Z
+deploy run: https://github.com/tuanluu-agilityio/tuan-blog/actions/runs/45074035205 (success, main 12a1367)
+200 /tuan-blog/
+200 /tuan-blog/en/
+200 /tuan-blog/about/
+200 /tuan-blog/en/about/
+200 /tuan-blog/posts/xin-chao/
+200 /tuan-blog/en/posts/hello-world/
+404 /tuan-blog/does-not-exist/
+--- 404 body
+<!DOCTYPE html><html lang="vi"><head><script>(function(){var d=document,r=d.documentElement,k='theme',t;
+try{t=localStorage.getItem(k)}catch(e){}
+if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+r.dataset.theme=t;
+d.addEventListener('DOMContentLoaded',function(){var b=d.querySelectorAll('[data-theme-toggle]'),i;
+function s(){for(var j=0;j<b.length;j++)b[j].setAttribute('aria-pressed',r.dataset.theme==='dark'?'true':'false')}
+s();for(i=0;i<b.length;i++)b[i].addEventListener('click',function(){t=r.dataset.theme==='dark'?'light':'dark';r.dataset.theme=t;try{localStorage.setItem(k,t)}catch(e){}s()})})})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Không tìm thấy trang · Blog của Tuấn</title><meta name="description" content="Ghi chép về lập trình, công việc và cuộc sống."><link rel="stylesheet" href="/tuan-blog/_astro/BaseLayout.D15bljTV.css"></head><body><a class="skip-link" href="#main">Bỏ qua để đến nội dung chính</a><header class="site-header" data-astro-cid-nen7h5rs><a class="site-title" href="/tuan-blog/" data-astro-cid-nen7h5rs>Blog của Tuấn</a><nav aria-label="Điều hướng chính" data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="/tuan-blog/" data-astro-cid-nen7h5rs>Trang chủ</a></li><li data-astro-cid-nen7h5rs><a href="/tuan-blog/about/" data-astro-cid-nen7h5rs>Giới thiệu</a></l
+--- vi xin-chao switcher
+<a class="lang-switch" href="/tuan-blog/en/posts/hello-world/" lang="en" hreflang="en" data-astro-cid-l4evwy7q>
+<a class="lang-switch" href="/tuan-blog/en/" lang="en" hreflang="en" data-astro-cid-l4evwy7q>
