@@ -1,0 +1,60 @@
+/*
+ * Design tokens (task 004). Colours are tested for WCAG 2.1 AA contrast in tests/unit/tokens.test.ts.
+ * The light block is also the default before the theme script runs; the media block below keeps
+ * dark mode working when JavaScript is off. Keep it in sync with the dark block (a test checks this).
+ */
+
+:root {
+  --font-display:
+    'Fraunces Variable', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-body:
+    'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+
+  --measure: 65ch;
+}
+
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+  --color-bg: #f5efe6;
+  --color-surface: #ede3d4;
+  --color-text: #2b211b;
+  --color-text-muted: #6b5a4c;
+  --color-accent: #a8461f;
+  --color-accent-contrast: #fff8f0;
+  --color-border: #d9cbb8;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-bg: #1c1714;
+  --color-surface: #26201b;
+  --color-text: #efe6da;
+  --color-text-muted: #b5a595;
+  --color-accent: #e08a5b;
+  --color-accent-contrast: #1c1714;
+  --color-border: #3a312a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --color-bg: #1c1714;
+    --color-surface: #26201b;
+    --color-text: #efe6da;
+    --color-text-muted: #b5a595;
+    --color-accent: #e08a5b;
+    --color-accent-contrast: #1c1714;
+    --color-border: #3a312a;
+  }
+}
