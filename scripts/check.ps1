@@ -1,4 +1,4 @@
-# Quality gate: lint (ESLint, Prettier, astro check), test (Vitest), build (Astro), links (base-path check).
+# Quality gate: lint (ESLint, Prettier, astro check), test (Vitest), build (Astro), links (base-path check), dist (built-output tests).
 # Prints the success marker as a whole line only when every step passed.
 $fail = $false
 function Invoke-Step($name, [scriptblock]$body) {
@@ -17,5 +17,6 @@ Invoke-Step 'lint' { npm run lint }
 Invoke-Step 'test' { npm test }
 Invoke-Step 'build' { npm run build }
 Invoke-Step 'links' { npm run check:links }
+Invoke-Step 'dist' { npm run test:dist }
 if ($fail) { exit 1 }
 Write-Output 'ALL CHECKS PASSED'

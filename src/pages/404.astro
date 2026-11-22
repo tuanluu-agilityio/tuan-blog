@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { localizedPath, t } from '../i18n/utils';
+---
+
+<BaseLayout locale="vi" title={t('vi', 'notFound.title')}>
+  <h1>{t('vi', 'notFound.title')}</h1>
+  <p>
+    <a href={localizedPath('vi', '/')}>{t('vi', 'notFound.back')}</a>
+  </p>
+  <section lang="en" aria-labelledby="nf-en">
+    <h2 id="nf-en">{t('en', 'notFound.title')}</h2>
+    <p>
+      <a href={localizedPath('en', '/')}>{t('en', 'notFound.back')}</a>
+    </p>
+  </section>
+</BaseLayout>

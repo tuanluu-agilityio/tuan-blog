@@ -5,4 +5,18 @@ import { t } from '../../i18n/utils';
 
 <BaseLayout locale="en" title={t('en', 'nav.about')}>
   <h1>{t('en', 'nav.about')}</h1>
+  <p class="lead">
+    I am Tuan, a software developer who likes to write down what he learns. This
+    blog is where I keep notes on programming, work and life.
+  </p>
+  <p>This bio is only a placeholder; I will rewrite it later.</p>
 </BaseLayout>
+
+<style>
+  .lead {
+    margin-block-start: var(--space-6);
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 1.1rem + 0.8vw, 1.625rem);
+    line-height: 1.5;
+  }
+</style>
