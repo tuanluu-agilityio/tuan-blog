@@ -9,13 +9,8 @@ step() {
   shift
   "$@" || { echo "CHECK FAILED: $name"; fail=1; }
 }
-# Q-01: temporary guard until the Astro project is scaffolded (first task removes it).
-if [ ! -f package.json ]; then
-  echo "SKIP: package.json not found - project not scaffolded yet (open question Q-01)"
-else
-  step lint npm run lint
-  step test npm test
-  step build npm run build
-fi
+step lint npm run lint
+step test npm test
+step build npm run build
 if [ "$fail" -ne 0 ]; then exit 1; fi
 echo "ALL CHECKS PASSED"
