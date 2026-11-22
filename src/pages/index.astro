@@ -1,35 +1,9 @@
 ---
-// Temporary manual-check page for task 004 (tokens, fonts, theme toggle); 005/006 replace it.
-import '../styles/fonts';
-import '../styles/global.css';
-import ThemeScript from '../components/ThemeScript.astro';
-import ThemeToggle from '../components/ThemeToggle.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import { t } from '../i18n/utils';
 ---
 
-<html lang="vi">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>tuan-blog</title>
-    <ThemeScript />
-  </head>
-  <body>
-    <main
-      id="main"
-      style="padding: var(--space-6) var(--space-4); max-inline-size: 48rem; margin-inline: auto;"
-    >
-      <ThemeToggle label={t('vi', 'theme.toggle')} />
-      <h1>tuan-blog</h1>
-      <p>
-        Ghi chép về lập trình, công việc và cuộc sống. Tiếng Việt có dấu: ơ ư ă
-        â đ ê ô, Ạ Ặ Ữ Ỹ.
-        <a href="#main">Một liên kết</a>.
-      </p>
-      <h2>Notes on code, work and life</h2>
-      <p style="color: var(--color-text-muted)">
-        Muted text for dates and captions.
-      </p>
-    </main>
-  </body>
-</html>
+<BaseLayout locale="vi" title={t('vi', 'site.title')}>
+  <h1>{t('vi', 'site.title')}</h1>
+  <p>{t('vi', 'site.description')}</p>
+</BaseLayout>

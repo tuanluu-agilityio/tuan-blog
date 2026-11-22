@@ -36,6 +36,8 @@ describe('i18n', () => {
     expect(Object.keys(ui.en).sort()).toEqual(Object.keys(ui.vi).sort());
     expect(Object.keys(ui.vi).sort()).toEqual(
       [
+        'nav.label',
+        'a11y.skip',
         'nav.home',
         'nav.about',
         'lang.switch',
