@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "name": "tuan-blog",
+    "ownerLanguage": "vi"
+  },
+  "gate": {
+    "command": {
+      "windows": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check.ps1",
+      "unix": "bash scripts/check.sh"
+    },
+    "successMarker": "ALL CHECKS PASSED",
+    "quiet": true
+  },
+  "constraintsPath": "docs/plans/constraints.md",
+  "riskAreas": [
+    "Deploy/CI: .github/workflows/ and site/base settings in astro.config.*",
+    "i18n routing and URL structure (vi at /, en at /en/)",
+    "Global design tokens (colour variables, typography)",
+    "Content collection schema (src/content/config.*)"
+  ],
+  "routing": {
+    "low": {
+      "implementer": {
+        "agent": "builder",
+        "model": "sonnet"
+      },
+      "reviewer": {
+        "agent": "reviewer",
+        "model": "sonnet"
+      }
+    },
+    "medium": {
+      "implementer": {
+        "agent": "builder",
+        "model": "sonnet"
+      },
+      "reviewer": {
+        "agent": "reviewer",
+        "model": "opus"
+      }
+    },
+    "high": {
+      "implementer": {
+        "agent": "specialist",
+        "model": "opus"
+      },
+      "reviewer": {
+        "agent": "security-reviewer",
+        "model": "opus"
+      }
+    }
+  },
+  "models": {
+    "tiers": [
+      "haiku",
+      "sonnet",
+      "opus",
+      "fable"
+    ],
+    "banned": [],
+    "requireExplicit": "darkforge",
+    "floors": {
+      "specialist": "sonnet",
+      "security-reviewer": "sonnet"
+    }
+  },
+  "escalation": {
+    "raiseAfterFixRounds": 2,
+    "askOwnerAfterFixRounds": 3
+  },
+  "git": {
+    "baseBranch": "main",
+    "remote": "origin",
+    "prFlow": true,
+    "requiredChecks": [
+      "check"
+    ],
+    "mergeMethod": "squash",
+    "autoMerge": false
+  },
+  "superpowers": "auto"
+}
