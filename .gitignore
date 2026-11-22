@@ -3,6 +3,6 @@
 .darkforge/offsets/
 .darkforge/ledger.jsonl
 
-dist/
+/dist/
 .astro/
 node_modules/
