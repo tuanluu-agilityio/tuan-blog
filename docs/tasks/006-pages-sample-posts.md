@@ -37,6 +37,8 @@ Consumes everything in § Interfaces. Produces the script `test:dist` as in § n
 4. `404.astro`: vi and en text from `ui` (`notFound.title`, `notFound.back`) with links to both homes.
 5. Sample posts: valid front matter, short realistic text, Vietnamese with full diacritics; `xin-chao` dated after `ghi-chu-dau-tien`.
 6. No client JS besides the theme script; no third-party URLs in the output.
+7. The glob loader sets `post.id` to the path (`vi/xin-chao`); the URL slug is the last `/` segment of `id`.
+   `getStaticPaths` must use `getPostsForLocale` (never raw `getCollection`) so drafts stay out of production builds.
 
 ## Tests
 
