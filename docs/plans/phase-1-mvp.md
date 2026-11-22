@@ -83,7 +83,7 @@ Shared contracts. Packages cite these sections; spelling here is binding.
 1. Base path: every internal `href`/`src` in `dist/` starts with `/tuan-blog/` and resolves to a file - `check-links` (002) and `localizedPath` tests (003).
 2. i18n URLs: vi pages unprefixed, en under `/en/`, no duplicate vi pages under `/vi/` - `build output has expected routes` (006), `localizedPath` tests (003).
 3. Translation pairing: switcher goes to the translation or the other locale home, never to a 404 - `findTranslation` tests (003), `LanguageSwitcher` route test (006).
-4. Contrast: every text/background pair in both themes meets WCAG AA (4.5:1 text, 3:1 border/UI) - `tokens contrast` tests (004).
+4. Contrast: every text/background pair in both themes meets WCAG AA (4.5:1 text; focus ring via accent >= 3:1); borders are decorative only (~1.4:1) and no control relies on them - `tokens contrast` tests (004). Wording corrected in the phase review (P1R).
 5. Client JS budget: the only script is the inline theme script, < 1 KB, no external scripts, no trackers - `js budget` test (006) and review.
 6. Deploy workflow: least-privilege permissions (`contents: read`, `pages: write`, `id-token: write`), pinned official actions, no secrets printed - security review of 002.
 7. Drafts never published in production builds - `filterPublished` tests (003).
@@ -112,11 +112,11 @@ starts from the previous merge. Component tests in 005 use Astro's Container API
 
 ## Exit checklist
 
-- [ ] All tasks merged
-- [ ] Quality gate passes
-- [ ] Memory bank updated
-- [ ] CI check `check` is green on `main` and marked required
-- [ ] Live site returns 200 for `/tuan-blog/` and `/tuan-blog/en/`
-- [ ] Lighthouse mobile Performance and Accessibility >= 95 on home and one post (evidence in `docs/testing/phase-1/`)
-- [ ] No client JS besides the inline theme script; no third-party requests
-- [ ] Q-01 closed
+- [x] All tasks merged - PRs #2-#9 (tasks 001-008), plan PR #1
+- [x] Quality gate passes - P1R reviewer gate: ALL CHECKS PASSED on 838faab
+- [x] Memory bank updated - `df memory lint`: memory: ok (task 008 commit)
+- [x] CI check `check` is green on `main` and marked required - gh run list: CI success on 838faab; branch protection contexts ["check"] (P1R)
+- [x] Live site returns 200 for `/tuan-blog/` and `/tuan-blog/en/` - docs/testing/phase-1/http-status.txt
+- [x] Lighthouse mobile Performance and Accessibility >= 95 on home and one post - lighthouse-home.json, lighthouse-post.json: 100/100
+- [x] No client JS besides the inline theme script; no third-party requests - test `js budget`, `no third-party requests`; Lighthouse network audit
+- [x] Q-01 closed - D-008 (task 001 removed the gate guard)

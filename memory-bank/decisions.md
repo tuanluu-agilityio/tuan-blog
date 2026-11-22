@@ -19,3 +19,4 @@ One line per decision. Long decisions go to `decisions/D-NNN.md` and are linked 
 | D-013 | 2026-11-23 | Plan gap: header links to About and en home before task 006 creates them, so task 005 added heading-only placeholders (about, en/index, en/about) to keep check:links green; task 006 fills them. ui keys nav.label and a11y.skip added. | task 005 |
 | D-014 | 2026-11-23 | Build-output ignores anchored to the repo root (.gitignore /dist/, .prettierignore /dist, eslint dist/**) so tests/dist/ is tracked, linted and format-checked. | task 006 |
 | D-015 | 2026-11-23 | Added task 008 to phase 1 to fix the two defects found by task 007 (missing space in post meta, favicon 404) before the phase review. | task 007 |
+| D-016 | 2026-11-23 | Phase 1 review APPROVED; 4 should-fix items moved to backlog; Review Focus 4 reworded (borders decorative, not 3:1). | P1R |

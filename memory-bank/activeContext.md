@@ -4,11 +4,11 @@
 
 ## Where we are
 
-Phase 1 (MVP blog live on GitHub Pages) in progress: `docs/plans/phase-1-mvp.md`. Tasks 001-008 done (post meta spacing and SVG favicon; live-site verification: all PASS, Lighthouse 100/100; home/post/About/404 pages in vi and en, 3 sample posts; base layout, header, footer, language switcher; warm design tokens, self-hosted fonts, theme toggle; i18n vi/en, content schema, post helpers): Astro 7 scaffold, gate (lint, test, build, links), CI job `check`, Pages deploy workflow, base `/tuan-blog`.
+Phase 1 complete (review P1R APPROVED): bilingual Astro blog live at https://tuanluu-agilityio.github.io/tuan-blog/ with warm design tokens, light/dark toggle, gate (lint, test, build, links, dist), CI `check` required on main, Pages deploy.
 
 ## Next
 
-phase-review (phase 1)
+Plan phase 2 (`/darkforge:plan-phase`); candidates in backlog.md (RSS, sitemap, tags, SEO/OG).
 
 ## Waiting on owner
 
