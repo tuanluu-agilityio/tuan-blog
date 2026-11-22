@@ -5,4 +5,18 @@ import { t } from '../i18n/utils';
 
 <BaseLayout locale="vi" title={t('vi', 'nav.about')}>
   <h1>{t('vi', 'nav.about')}</h1>
+  <p class="lead">
+    Mình là Tuấn, một người làm phần mềm thích viết ra những gì mình học được.
+    Blog này là nơi ghi chép về lập trình, công việc và cuộc sống.
+  </p>
+  <p>Phần giới thiệu này chỉ là chỗ giữ chỗ, mình sẽ viết lại sau.</p>
 </BaseLayout>
+
+<style>
+  .lead {
+    margin-block-start: var(--space-6);
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 1.1rem + 0.8vw, 1.625rem);
+    line-height: 1.5;
+  }
+</style>

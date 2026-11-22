@@ -1,0 +1,77 @@
+---
+import { formatDate, localizedPath, t } from '../i18n/utils';
+import type { Locale } from '../i18n/ui';
+import type { Post } from '../lib/posts';
+
+interface Props {
+  locale: Locale;
+  posts: Post[];
+}
+
+const { locale, posts } = Astro.props;
+const slugOf = (id: string) => id.split('/').at(-1) ?? id;
+---
+
+{posts.length === 0 ? (
+  <p class="empty">{t(locale, 'posts.empty')}</p>
+) : (
+  <ol class="post-list">
+    {posts.map((post) => (
+      <li>
+        <article>
+          <time datetime={post.data.pubDate.toISOString().slice(0, 10)}>
+            {formatDate(post.data.pubDate, locale)}
+          </time>
+          <h2>
+            <a href={localizedPath(locale, `posts/${slugOf(post.id)}`)}>
+              {post.data.title}
+            </a>
+          </h2>
+          <p>{post.data.description}</p>
+        </article>
+      </li>
+    ))}
+  </ol>
+)}
+
+<style>
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin-block-start: var(--space-7);
+  }
+  .post-list li {
+    max-inline-size: none;
+    padding-block: var(--space-6);
+    border-block-start: 1px solid var(--color-border);
+  }
+  .post-list li + li {
+    margin-block-start: 0;
+  }
+  time {
+    display: block;
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+  }
+  h2 {
+    margin-block-start: var(--space-2);
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.125rem);
+  }
+  h2 a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  h2 a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+  article p {
+    margin-block-start: var(--space-3);
+    color: var(--color-text-muted);
+  }
+  .empty {
+    margin-block-start: var(--space-6);
+    color: var(--color-text-muted);
+  }
+</style>

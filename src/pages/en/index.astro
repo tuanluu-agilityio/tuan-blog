@@ -1,8 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostList from '../../components/PostList.astro';
+import { getPostsForLocale } from '../../lib/getPosts';
 import { t } from '../../i18n/utils';
+
+const posts = await getPostsForLocale('en');
 ---
 
 <BaseLayout locale="en" title={t('en', 'site.title')}>
-  <h1>{t('en', 'site.title')}</h1>
+  <h1>{t('en', 'posts.heading')}</h1>
+  <PostList locale="en" posts={posts} />
 </BaseLayout>

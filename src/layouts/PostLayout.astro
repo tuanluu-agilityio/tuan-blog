@@ -1,0 +1,76 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { formatDate, t } from '../i18n/utils';
+import type { Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description?: string;
+  published: Date;
+  updated?: Date;
+  alternateHref?: string;
+}
+
+const { locale, title, description, published, updated, alternateHref } =
+  Astro.props;
+const iso = (d: Date) => d.toISOString().slice(0, 10);
+---
+
+<BaseLayout
+  locale={locale}
+  title={title}
+  description={description}
+  alternateHref={alternateHref}
+>
+  <article class="post">
+    <header>
+      <h1>{title}</h1>
+      <p class="meta">
+        <span>
+          {t(locale, 'post.published')}
+          <time datetime={iso(published)}>{formatDate(published, locale)}</time>
+        </span>
+        {updated && (
+          <span>
+            {t(locale, 'post.updated')}
+            <time datetime={iso(updated)}>{formatDate(updated, locale)}</time>
+          </span>
+        )}
+      </p>
+    </header>
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .post {
+    max-inline-size: var(--measure);
+  }
+  header {
+    padding-block-end: var(--space-6);
+    margin-block-end: var(--space-6);
+    border-block-end: 1px solid var(--color-border);
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-5);
+    margin-block-start: var(--space-5);
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+  }
+  .prose {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+  }
+  .prose :global(> :first-child) {
+    margin-block-start: 0;
+  }
+  .prose :global(p + p) {
+    margin-block-start: var(--space-5);
+  }
+</style>

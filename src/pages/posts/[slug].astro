@@ -1,0 +1,39 @@
+---
+import { render } from 'astro:content';
+import PostLayout from '../../layouts/PostLayout.astro';
+import { getPostsForLocale } from '../../lib/getPosts';
+import { findTranslation } from '../../lib/posts';
+import { localizedPath } from '../../i18n/utils';
+
+export async function getStaticPaths() {
+  const posts = await getPostsForLocale('vi');
+  const others = await getPostsForLocale('en');
+  return posts.map((post) => {
+    const slug = post.id.split('/').at(-1) as string;
+    const translation = findTranslation(others, post, 'en');
+    return {
+      params: { slug },
+      props: {
+        post,
+        alternateHref: translation
+          ? localizedPath('en', `posts/${translation.id.split('/').at(-1)}`)
+          : undefined,
+      },
+    };
+  });
+}
+
+const { post, alternateHref } = Astro.props;
+const { Content } = await render(post);
+---
+
+<PostLayout
+  locale="vi"
+  title={post.data.title}
+  description={post.data.description}
+  published={post.data.pubDate}
+  updated={post.data.updatedDate}
+  alternateHref={alternateHref}
+>
+  <Content />
+</PostLayout>
