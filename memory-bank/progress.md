@@ -10,3 +10,4 @@ One row per task. Update after every task.
 | 003 | task/003-i18n-content | specialist | opus (review: security-reviewer/opus) | done | 2501350 |
 | 004 | task/004-design-tokens-theme | specialist | opus (review: security-reviewer/opus) | done | 3285453 |
 | 005 | task/005-layout-switcher | builder | sonnet (review: reviewer/opus) | done | 1836095 |
+| 006 | task/006-pages-sample-posts | builder | sonnet (review: reviewer/opus) | done | 3662396 |
