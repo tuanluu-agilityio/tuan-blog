@@ -50,4 +50,17 @@ describe('check-links', () => {
     const errors = await checkLinks(fixture('traversal'), BASE);
     expect(errors.map((e) => e.reason)).toEqual(['not-found', 'not-found']);
   });
+
+  test('ignores code inside inline scripts and comments', async () => {
+    const errors = await checkLinks(fixture('inline-code'), BASE);
+    // Only the real <script src> tag pointing at a missing file is reported.
+    expect(errors).toEqual([
+      {
+        file: 'index.html',
+        attr: 'src',
+        value: '/tuan-blog/missing.js',
+        reason: 'not-found',
+      },
+    ]);
+  });
 });

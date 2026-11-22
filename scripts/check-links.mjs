@@ -13,6 +13,18 @@ import { pathToFileURL } from 'node:url';
 
 const ATTR_RE = /\s(href|src)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+))/gi;
 const SCHEME_RE = /^[a-z][a-z0-9+.-]*:/i;
+const COMMENT_RE = /<!--[\s\S]*?-->/g;
+// Keeps the opening <script ...> tag (so a src attribute is still checked), drops the body.
+const SCRIPT_BODY_RE = /(<script\b[^>]*>)[\s\S]*?<\/script\s*>/gi;
+
+/**
+ * Remove HTML comments and inline script bodies so code like `el.src = x`
+ * is not mistaken for an attribute.
+ * @param {string} html
+ */
+function stripNonMarkup(html) {
+  return html.replace(COMMENT_RE, '').replace(SCRIPT_BODY_RE, '$1</script>');
+}
 
 /** @param {string} dir @returns {Promise<string[]>} */
 async function listHtml(dir) {
@@ -82,7 +94,7 @@ export async function checkLinks(distDir, base) {
   const errors = [];
 
   for (const filePath of await listHtml(root)) {
-    const html = await readFile(filePath, 'utf8');
+    const html = stripNonMarkup(await readFile(filePath, 'utf8'));
     const file = path.relative(root, filePath).split(path.sep).join('/');
     const fileDir = path.dirname(filePath);
 
