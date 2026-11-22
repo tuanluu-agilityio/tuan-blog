@@ -12,3 +12,6 @@ Ideas and deferred work, one line each. Not in scope until promoted to a phase p
 - Owner to review UI wording in src/i18n/ui.ts (site.title "Blog của Tuấn" / "Tuan's Blog").
 - layout.test.ts: two LanguageSwitcher test names differ from package 005 wording (assertions equivalent) - rename for traceability.
 - Owner to replace placeholder About bios (src/pages/about.astro, src/pages/en/about.astro) and sample posts with real content.
+- P1R: add post-008 addendum to docs/testing/phase-1/README.md (meta space and favicon fixed; live /tuan-blog/favicon.svg 200).
+- P1R: layout.test.ts LanguageSwitcher tests should assert literal /tuan-blog/en/ and /tuan-blog/ hrefs (currently relative to Vitest BASE_URL '/').
+- P1R: guard content - fail the build if front matter lang differs from the folder (vi/ or en/) or if two posts share a slug in one locale.
