@@ -13,9 +13,9 @@ GC-01, GC-02, GC-09
 
 ## Files
 
-Create: `.github/workflows/ci.yml`, `.github/workflows/deploy.yml`, `scripts/check-links.mjs`,
+Create: `.github/workflows/deploy.yml`, `scripts/check-links.mjs`,
 `tests/unit/check-links.test.ts`, `tests/fixtures/links/` (small HTML fixtures).
-Modify: `astro.config.mjs`, `package.json` (script `check:links`), `scripts/check.ps1`, `scripts/check.sh`.
+Modify: `.github/workflows/ci.yml` (bootstrap version from the plan PR, D-007: replace with requirement 3 and drop the `hashFiles` conditions), `astro.config.mjs`, `package.json` (script `check:links`), `scripts/check.ps1`, `scripts/check.sh`.
 
 ## Interfaces
 
