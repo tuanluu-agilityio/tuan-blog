@@ -1,0 +1,2 @@
+/posts/xin-chao/ -> https://tuanluu-agilityio.github.io/tuan-blog/en/posts/hello-world/ 200
+/posts/ghi-chu-dau-tien/ -> https://tuanluu-agilityio.github.io/tuan-blog/en/ 200
