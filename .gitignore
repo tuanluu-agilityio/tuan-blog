@@ -2,3 +2,7 @@
 .darkforge/gate.json
 .darkforge/offsets/
 .darkforge/ledger.jsonl
+
+dist/
+.astro/
+node_modules/
