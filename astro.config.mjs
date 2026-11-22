@@ -8,4 +8,9 @@ export default defineConfig({
     format: 'directory',
   },
   output: 'static',
+  i18n: {
+    locales: ['vi', 'en'],
+    defaultLocale: 'vi',
+    routing: { prefixDefaultLocale: false },
+  },
 });
