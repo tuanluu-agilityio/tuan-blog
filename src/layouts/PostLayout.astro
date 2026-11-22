@@ -28,12 +28,12 @@ const iso = (d: Date) => d.toISOString().slice(0, 10);
       <h1>{title}</h1>
       <p class="meta">
         <span>
-          {t(locale, 'post.published')}
+          {t(locale, 'post.published')}{' '}
           <time datetime={iso(published)}>{formatDate(published, locale)}</time>
         </span>
         {updated && (
           <span>
-            {t(locale, 'post.updated')}
+            {t(locale, 'post.updated')}{' '}
             <time datetime={iso(updated)}>{formatDate(updated, locale)}</time>
           </span>
         )}
