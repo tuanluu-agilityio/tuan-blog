@@ -10,3 +10,4 @@ Ideas and deferred work, one line each. Not in scope until promoted to a phase p
 - Add @astrojs/mdx before the first .mdx post (glob already matches .mdx).
 - Bump GitHub Actions to majors that run on Node 24 (deploy-pages@v4 warns: Node 20 deprecated).
 - Owner to review UI wording in src/i18n/ui.ts (site.title "Blog của Tuấn" / "Tuan's Blog").
+- layout.test.ts: two LanguageSwitcher test names differ from package 005 wording (assertions equivalent) - rename for traceability.

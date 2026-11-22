@@ -1,0 +1,41 @@
+---
+// Links to the other locale: its translation (alternateHref) or its home page (D-003).
+import { localizedPath } from '../i18n/utils';
+import type { Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  alternateHref?: string;
+}
+
+const { locale, alternateHref } = Astro.props;
+const other: Locale = locale === 'vi' ? 'en' : 'vi';
+const names: Record<Locale, string> = { vi: 'Tiếng Việt', en: 'English' };
+const href = alternateHref ?? localizedPath(other, '/');
+---
+
+<a class="lang-switch" {href} lang={other} hreflang={other}>
+  {names[other]}
+</a>
+
+<style>
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2.75rem;
+    padding-inline: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-text);
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease;
+  }
+  .lang-switch:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+</style>

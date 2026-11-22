@@ -14,12 +14,11 @@ GC-01, GC-02, GC-03, GC-04, GC-05, GC-07, GC-08
 
 ## Files
 
-Create: `src/pages/en/index.astro`, `src/pages/posts/[slug].astro`, `src/pages/en/posts/[slug].astro`,
-`src/pages/about.astro`, `src/pages/en/about.astro`, `src/pages/404.astro`, `src/components/PostList.astro`,
+Create: `src/pages/posts/[slug].astro`, `src/pages/en/posts/[slug].astro`, `src/pages/404.astro`, `src/components/PostList.astro`,
 `src/layouts/PostLayout.astro`, `src/content/posts/vi/xin-chao.md`, `src/content/posts/en/hello-world.md`
 (both `translationKey: hello-world`), `src/content/posts/vi/ghi-chu-dau-tien.md` (vi only), `vitest.dist.config.ts`,
 `tests/dist/routes.test.ts`. Remove the `.gitkeep` files in `src/content/posts/*/`.
-Modify: `src/pages/index.astro`, `src/i18n/ui.ts` (new keys only if needed, both locales), `package.json` (`test:dist`),
+Modify: `src/pages/index.astro`, and the heading-only placeholders from task 005 (D-013) `src/pages/en/index.astro`, `src/pages/about.astro`, `src/pages/en/about.astro`, `src/i18n/ui.ts` (new keys only if needed, both locales), `package.json` (`test:dist`),
 `scripts/check.ps1`, `scripts/check.sh` (step `dist` after `links`).
 
 ## Interfaces

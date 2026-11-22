@@ -3,7 +3,9 @@ export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = 'vi';
 
 const vi = {
+  'nav.label': 'Điều hướng chính',
   'nav.home': 'Trang chủ',
+  'a11y.skip': 'Bỏ qua để đến nội dung chính',
   'nav.about': 'Giới thiệu',
   'lang.switch': 'English',
   'theme.toggle': 'Chuyển chế độ sáng/tối',
@@ -22,7 +24,9 @@ export type UiKey = keyof typeof vi;
 export const ui: Record<Locale, Record<UiKey, string>> = {
   vi,
   en: {
+    'nav.label': 'Main navigation',
     'nav.home': 'Home',
+    'a11y.skip': 'Skip to main content',
     'nav.about': 'About',
     'lang.switch': 'Tiếng Việt',
     'theme.toggle': 'Toggle light/dark mode',
