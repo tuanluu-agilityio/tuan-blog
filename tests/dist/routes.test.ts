@@ -95,3 +95,27 @@ describe('home', () => {
     expect(b).toBeGreaterThan(a);
   });
 });
+
+describe('polish', () => {
+  it('post meta has a space before the date', () => {
+    const meta = (rel: string) => {
+      const m = read(rel).match(/<p class="meta[^"]*"[^>]*>([\s\S]*?)<\/p>/);
+      expect(m, rel).not.toBeNull();
+      return (m as RegExpMatchArray)[1].replace(/<[^>]+>/g, '');
+    };
+    expect(meta('posts/xin-chao/index.html')).toMatch(/Đăng ngày \d/);
+    expect(meta('en/posts/hello-world/index.html')).toMatch(/Published on \S/);
+  });
+
+  it('favicon is linked under the base path', () => {
+    for (const f of htmlFiles('')) {
+      expect(read(f), f).toMatch(
+        /<link\b(?=[^>]*\srel="icon")(?=[^>]*\shref="\/tuan-blog\/favicon\.svg")[^>]*>/,
+      );
+    }
+    expect(fs.existsSync(`${dist}/favicon.svg`)).toBe(true);
+    const svg = read('favicon.svg');
+    expect(svg.length).toBeLessThan(1024);
+    expect(svg).not.toContain('<script');
+  });
+});
