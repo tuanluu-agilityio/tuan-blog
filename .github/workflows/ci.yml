@@ -14,13 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install dependencies
-        if: hashFiles('package-lock.json') != ''
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version-file: .nvmrc
           cache: npm
-      - if: hashFiles('package-lock.json') != ''
-        run: npm ci
+      - run: npm ci
       - name: Quality gate
         run: bash scripts/check.sh

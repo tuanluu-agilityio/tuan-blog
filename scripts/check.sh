@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Quality gate: lint (ESLint, Prettier, astro check), test (Vitest), build (Astro).
+# Quality gate: lint (ESLint, Prettier, astro check), test (Vitest), build (Astro), links (base-path check).
 # Prints the success marker as a whole line only when every step passed.
 set -u
 fail=0
@@ -12,5 +12,6 @@ step() {
 step lint npm run lint
 step test npm test
 step build npm run build
+step links npm run check:links
 if [ "$fail" -ne 0 ]; then exit 1; fi
 echo "ALL CHECKS PASSED"
