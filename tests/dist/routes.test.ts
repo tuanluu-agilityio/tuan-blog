@@ -67,7 +67,9 @@ describe('js budget', () => {
       const scripts = [...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi)];
       expect(scripts.length, f).toBeLessThanOrEqual(1);
       for (const s of scripts) {
-        expect(new TextEncoder().encode(s[1] ?? '').length, f).toBeLessThan(1024);
+        expect(new TextEncoder().encode(s[1] ?? '').length, f).toBeLessThan(
+          1024,
+        );
       }
     }
   });
