@@ -4,11 +4,11 @@
 
 ## Where we are
 
-Project initialised on 2026-11-22. No task started yet.
+Phase 1 (MVP blog live on GitHub Pages) planned: `docs/plans/phase-1-mvp.md`, packages 001-007 in `docs/tasks/`.
 
 ## Next
 
-Plan the first phase, then run the first task.
+Task 001 - Scaffold Astro project and real gate (`docs/tasks/001-scaffold-astro.md`), no open dependency.
 
 ## Waiting on owner
 
