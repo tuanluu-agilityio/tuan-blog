@@ -99,6 +99,7 @@ Shared contracts. Packages cite these sections; spelling here is binding.
 | 005 | Base layout, header, footer and language switcher | 003, 004 | medium | builder/sonnet | reviewer/opus | every page uses BaseLayout; switcher and toggle present and labelled per locale | `LanguageSwitcher.*`, `BaseLayout.*` |
 | 006 | Pages and sample posts | 005 | medium | builder/sonnet | reviewer/opus | home, post, About in vi/en and 404 build; 1-2 sample posts per locale; JS budget held | `build output has expected routes`, `js budget`, `LanguageSwitcher route` |
 | 007 | Phase verification on the live site | 006 | low | verifier/sonnet | reviewer/sonnet | evidence in `docs/testing/phase-1/`: live URLs 200, Lighthouse >= 95 (Perf, A11y) mobile, 320px screenshots, both themes | checklist in package |
+| 008 | Post meta spacing and favicon (defects from 007) | 007 | low | builder/sonnet | reviewer/sonnet | meta shows a space before the date; favicon served under base | `post meta has a space before the date`, `favicon is linked under the base path` |
 
 Task 004 touches design tokens (risk area) and so is high. 003 depends on 002 because both edit `astro.config.mjs`.
 Tasks run one at a time in id order; 002, 003, 004 and 006 each edit `package.json` and `scripts/check.*`, so each
