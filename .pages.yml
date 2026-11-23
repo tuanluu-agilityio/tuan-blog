@@ -1,0 +1,137 @@
+# Pages CMS (https://pagescms.org) editor config. Each save is a commit on main.
+media:
+  name: images
+  label: Ảnh
+  input: public/images
+  output: /tuan-blog/images
+  rename: safe
+  categories: [image]
+
+settings:
+  content:
+    merge: true
+
+content:
+  - name: posts-vi
+    label: Bài viết (Tiếng Việt)
+    type: collection
+    path: src/content/posts/vi
+    format: yaml-frontmatter
+    filename:
+      template: '{primary}.md'
+      field: create
+    exclude: [.gitkeep]
+    view:
+      fields: [title, pubDate, draft]
+      primary: title
+      sort: [pubDate, title]
+      default:
+        sort: pubDate
+        order: desc
+    fields:
+      - name: title
+        label: Tiêu đề
+        type: string
+        required: true
+        options:
+          maxlength: 120
+      - name: description
+        label: Mô tả ngắn
+        type: text
+        required: true
+        options:
+          maxlength: 200
+      - name: pubDate
+        label: Ngày đăng
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: lang
+        label: Ngôn ngữ
+        type: select
+        required: true
+        default: vi
+        description: Phải khớp với mục đang soạn (vi cho bài tiếng Việt).
+        options:
+          values: [vi]
+      - name: translationKey
+        label: Mã bản dịch
+        type: string
+        required: true
+        description: Chữ thường, số và dấu -. Bản dịch của cùng một bài dùng chung mã này.
+        pattern:
+          regex: '^[a-z0-9]+(-[a-z0-9]+)*$'
+          message: 'Chỉ dùng chữ thường không dấu, số và dấu -, ví dụ: hoc-astro'
+      - name: draft
+        label: Bản nháp (chưa đăng)
+        type: boolean
+        default: false
+      - name: body
+        label: Nội dung
+        type: rich-text
+        options:
+          format: markdown
+          media: images
+
+  - name: posts-en
+    label: Posts (English)
+    type: collection
+    path: src/content/posts/en
+    format: yaml-frontmatter
+    filename:
+      template: '{primary}.md'
+      field: create
+    exclude: [.gitkeep]
+    view:
+      fields: [title, pubDate, draft]
+      primary: title
+      sort: [pubDate, title]
+      default:
+        sort: pubDate
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+        options:
+          maxlength: 120
+      - name: description
+        label: Description
+        type: text
+        required: true
+        options:
+          maxlength: 200
+      - name: pubDate
+        label: Published
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: lang
+        label: Language
+        type: select
+        required: true
+        default: en
+        description: Must match this collection (en for English posts).
+        options:
+          values: [en]
+      - name: translationKey
+        label: Translation key
+        type: string
+        required: true
+        description: Lowercase letters, digits and -. A post and its translation share this key.
+        pattern:
+          regex: '^[a-z0-9]+(-[a-z0-9]+)*$'
+          message: 'Use lowercase letters, digits and -, e.g. learning-astro'
+      - name: draft
+        label: Draft (not published)
+        type: boolean
+        default: false
+      - name: body
+        label: Body
+        type: rich-text
+        options:
+          format: markdown
+          media: images

@@ -14,3 +14,4 @@ One row per task. Update after every task.
 | 007 | task/007-phase-verification | verifier | sonnet (review: reviewer/sonnet) | done | 2300042 |
 | 008 | task/008-polish-meta-favicon | builder | sonnet (review: reviewer/sonnet) | done | 1261018 |
 | P1R | task/P1R-review | security-reviewer | opus | done | 1563596 |
+| 009 | task/009-pages-cms | orchestrator | opus (review: reviewer/sonnet) | done | 830861 |
