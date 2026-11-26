@@ -4,7 +4,7 @@ description: "Hồ sơ AB#696969: một vụ án đã khép lại"
 pubDate: 2026-11-26
 lang: vi
 translationKey: bon-phut-im-lang
-draft: false
+draft: true
 ---
 ## I. Lời khai đầu tiên
 
